@@ -40,26 +40,26 @@ export const createResidency = asyncHandler(async (req, res) => {
   }
 });
 
-// // function to get all the documents/residencies
-// export const getAllResidencies = asyncHandler(async (req, res) => {
-//   const residencies = await prisma.residency.findMany({
-//     orderBy: {
-//       createdAt: "desc",
-//     },
-//   });
-//   res.send(residencies);
-// });
+// function to get all the documents/residencies
+export const getAllResidencies = asyncHandler(async (req, res) => {
+  const residencies = await prisma.residency.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  res.send(residencies);
+});
 
-// // function to get a specific document/residency
-// export const getResidency = asyncHandler(async (req, res) => {
-//   const { id } = req.params;
+// function to get a specific document/residency
+export const getResidency = asyncHandler(async (req, res) => {
+  const { id } = req.params;
 
-//   try {
-//     const residency = await prisma.residency.findUnique({
-//       where: { id },
-//     });
-//     res.send(residency);
-//   } catch (err) {
-//     throw new Error(err.message);
-//   }
-// });
+  try {
+    const residency = await prisma.residency.findUnique({
+      where: { id },
+    });
+    res.send(residency);
+  } catch (err) {
+    throw new Error(err.message);
+  }
+});
