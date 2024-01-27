@@ -1,18 +1,23 @@
 import express from "express";
 import {
   bookVisit,
-  createUser  
+  createUser,
+  getAllBookings,
+  cancelBooking,
+  toFav,
+  getAllFavorites
 } from "../controllers/userCntrl.js";
 import jwtCheck from "../config/auth0Config.js";
 const router = express.Router();
 
 router.post("/register", createUser);
-router.post("/bookVisit/:id",  bookVisit);
-// router.post("/allBookings", getAllBookings);
-// router.post("/removeBooking/:id", jwtCheck, cancelBooking);
-// router.post("/toFav/:rid", jwtCheck, toFav);
-// router.post("/allFav/", jwtCheck, getAllFavorites);
+router.post("/bookVisit/:id", bookVisit);
+router.post("/allBookings", getAllBookings);
+router.post("/removeBooking/:id", cancelBooking);
+router.post("/toFav/:rid", toFav);
+router.post("/allFav/", getAllFavorites);
 export { router as userRoute };
+
 
 
 // import express from "express";
