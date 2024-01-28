@@ -17,7 +17,7 @@ export const getAllProperties = async () => {
     }
     return response.data;
   } catch (error) {
-    toast.error("Something went wrong");
+    // toast.error("Something went wrong");
     throw error;
   }
 };
@@ -47,7 +47,7 @@ export const createUser = async (email) => {
      
     );
   } catch (error) {
-    toast.error("Something went wrong, Please try again");
+    // toast.error("Something went wrong, Please try again");
     throw error;
   }
 };
@@ -64,7 +64,7 @@ export const bookVisit = async (date, propertyId, email) => {
     );
   } catch (error) {
     toast.error("Something went wrong, Please try again");
-    // throw error;
+    throw error;
   }
 };
 
@@ -77,9 +77,9 @@ export const removeBooking = async (id, email) => {
       }
     );
   } catch (error) {
-    toast.error("Something went wrong, Please try again");
+    // toast.error("Something went wrong, Please try again");
 
-    // throw error;
+    throw error;
   }
 };
 
@@ -102,7 +102,7 @@ export const getAllFav = async (email) => {
 
     return res.data["favResidenciesID"];
   } catch (e) {
-    toast.error("Something went wrong while fetching favs");
+    // toast.success("Something went wrong while fetching favs");
     throw e;
   }
 };
@@ -115,8 +115,8 @@ export const getAllBookings = async (email) => {
     });
     return res.data["bookedVisits"];
   } catch (error) {
-    // toast.error("Something went wrong while fetching bookings");
-    // throw error;
+    // toast.success("Something went wrong while fetching bookings");
+    throw error;
   }
 };
 
@@ -130,6 +130,6 @@ export const createResidency = async (data) => {
       }
     );
   } catch (error) {
-    // throw error;
+    throw error;
   }
 };
