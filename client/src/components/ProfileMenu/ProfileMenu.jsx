@@ -18,6 +18,7 @@ const ProfileMenu = ({user, logout}) => {
             </Menu.Item>
 
             <Menu.Item onClick={()=>{
+                // clearing the local storage while log out
                 localStorage.clear();
                 logout()
             }}>
