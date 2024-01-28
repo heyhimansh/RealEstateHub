@@ -64,7 +64,7 @@ export const bookVisit = async (date, propertyId, email) => {
     );
   } catch (error) {
     toast.error("Something went wrong, Please try again");
-    throw error;
+    // throw error;
   }
 };
 
@@ -79,7 +79,7 @@ export const removeBooking = async (id, email) => {
   } catch (error) {
     toast.error("Something went wrong, Please try again");
 
-    throw error;
+    // throw error;
   }
 };
 
@@ -115,8 +115,8 @@ export const getAllBookings = async (email) => {
     });
     return res.data["bookedVisits"];
   } catch (error) {
-    toast.error("Something went wrong while fetching bookings");
-    throw error;
+    // toast.error("Something went wrong while fetching bookings");
+    // throw error;
   }
 };
 
@@ -130,6 +130,6 @@ export const createResidency = async (data) => {
       }
     );
   } catch (error) {
-    throw error;
+    // throw error;
   }
 };
