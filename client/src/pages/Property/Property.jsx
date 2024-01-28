@@ -29,12 +29,12 @@ const Property = () => {
   const { user } = useAuth0();
 
   const {
-    userDetails: { token, bookings },
+    userDetails: { email, bookings },
     setUserDetails,
   } = useContext(UserDetailContext);
 
   const { mutate: cancelBooking, isLoading: cancelling } = useMutation({
-    mutationFn: () => removeBooking(id, user?.email, token),
+    mutationFn: () => removeBooking(id, user?.email),
     onSuccess: () => {
       setUserDetails((prev) => ({
         ...prev,

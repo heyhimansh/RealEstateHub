@@ -16,6 +16,8 @@ import UserDetailContext from "./context/UserDetailContext";
 import Bookings from "./pages/Bookings/Bookings";
 import Favourites from "./pages/Favourites/Favourites";
 
+
+
 function App() {
   const queryClient = new QueryClient();
 

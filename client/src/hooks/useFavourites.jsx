@@ -11,7 +11,7 @@ const useFavourites = () => {
 
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: "allFavourites",
-    queryFn: () => getAllFav(user?.email, userDetails?.token),
+    queryFn: () => getAllFav(user?.email),
     onSuccess: (data) =>
       setUserDetails((prev) => ({ ...prev, favourites: data })),
     enabled: user !== undefined,
@@ -22,7 +22,7 @@ const useFavourites = () => {
 
   useEffect(() => {
     queryRef.current && queryRef.current();
-  }, [userDetails?.token]);
+  }, [userDetails?.email]);
 
   return { data, isError, isLoading, refetch };
 };

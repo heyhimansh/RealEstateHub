@@ -11,7 +11,7 @@ const useBookings = () => {
 
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: "allBookings",
-    queryFn: () => getAllBookings(user?.email, userDetails?.token),
+    queryFn: () => getAllBookings(user?.email),
     onSuccess: (data) =>
       setUserDetails((prev) => ({ ...prev, bookings: data })),
     enabled: user !== undefined,
@@ -22,7 +22,7 @@ const useBookings = () => {
 
   useEffect(() => {
     queryRef.current && queryRef.current();
-  }, [userDetails?.token]);
+  }, [user?.email]);
 
   return { data, isError, isLoading, refetch };
 };

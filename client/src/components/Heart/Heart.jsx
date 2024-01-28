@@ -12,9 +12,11 @@ const Heart = ({id}) => {
     const [heartColor, setHeartColor] = useState("white")
     const {validateLogin} = useAuthCheck()
     const {user} = useAuth0()
+    // console.log(validateLogin);
+    console.log(user)
 
     const {
-        userDetails: { favourites, token },
+        userDetails: { favourites },
         setUserDetails,
       } = useContext(UserDetailContext);
 
@@ -24,7 +26,7 @@ const Heart = ({id}) => {
 
 
     const {mutate} = useMutation({
-        mutationFn: () => toFav(id, user?.email, token),
+        mutationFn: () => toFav(id, user?.email),
         onSuccess: ()=> {
             setUserDetails((prev)=> (
                 {
@@ -35,9 +37,10 @@ const Heart = ({id}) => {
         }
     })
 
+
     const handleLike = () => {
         if(validateLogin())
-        {
+        {   console.log("user is logged in")
             mutate()
             setHeartColor((prev)=> prev === "#fa3e5f" ? "white": "#fa3e5f")
         }

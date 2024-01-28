@@ -9,7 +9,7 @@ import dayjs from "dayjs";
 const BookingModal = ({ opened, setOpened, email, propertyId }) => {
   const [value, setValue] = useState(null);
   const {
-    userDetails: { token },
+    userDetails: { name },
     setUserDetails,
   } = useContext(UserDetailContext);
 
@@ -30,7 +30,7 @@ const BookingModal = ({ opened, setOpened, email, propertyId }) => {
   };
 
   const { mutate, isLoading } = useMutation({
-    mutationFn: () => bookVisit(value, propertyId, email, token),
+    mutationFn: () => bookVisit(value, propertyId, email),
     onSuccess: () => handleBookingSuccess(),
     onError: ({ response }) => toast.error(response.data.message),
     onSettled: () => setOpened(false),
