@@ -16,4 +16,7 @@
 
 .properties-container .search-bar input{
     width: 70%;
+    
 }
+
+// clamp is the sort to indicate the minimum width and max - width 
