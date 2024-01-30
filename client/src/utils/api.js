@@ -132,4 +132,5 @@ export const createResidency = async (data) => {
   } catch (error) {
     throw error;
   }
+  
 };
