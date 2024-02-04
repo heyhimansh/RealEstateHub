@@ -3,6 +3,8 @@ import "./Contact.css";
 import { MdCall } from "react-icons/md";
 import { BsFillChatDotsFill } from "react-icons/bs";
 import {HiChatBubbleBottomCenter} from 'react-icons/hi2'
+// import RightImageMotion from "./right"
+
 const Contact = () => {
   return (
     <div id="contact-us" className="c-wrapper">
@@ -78,9 +80,10 @@ const Contact = () => {
         </div>
 
         {/* right side */}
+        {/* <RightImageMotion/> */}
         <div className="flexEnd c-right">
           <div className="image-container">
-            <img src="./contact.jpg" alt="" />
+            <img src="./r1.png" alt="" />
           </div>
         </div>
       </div>
