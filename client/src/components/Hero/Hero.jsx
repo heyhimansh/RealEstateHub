@@ -89,7 +89,7 @@ const Hero = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: '-7rem', opacity: 0 }}
             transition={{
-              duration: 3, // Adjust the duration as needed
+              duration: 2, // Adjust the duration as needed
               ease: "easeInOut", // Use a different easing function if desired
             }}
             className="image-container"
