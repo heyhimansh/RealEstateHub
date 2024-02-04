@@ -1,8 +1,31 @@
 import "./Hero.css";
 import CountUp from "react-countup";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import SearchBar from "../SearchBar/SearchBar";
+// import SearchBar from "../SearchBar/SearchBar";
+
+const images = ["./r1.png", "./r2.png", "./r3.png"]; // Add more image URLs as needed
+
+
+
 const Hero = () => {
+  // const images = ['r1.png', 'r2.png', 'r3.png'];
+  const [currentImage, setCurrentImage] = useState(0);
+
+
+
+  useEffect(() => {
+    // Function to update the current image every 3 seconds (adjust the interval as needed)
+    const intervalId = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 4000);
+
+    // Cleanup the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
+
+
+
   return (
     <section className="hero-wrapper">
       <div className="paddings innerWidth flexCenter hero-container">
@@ -11,12 +34,12 @@ const Hero = () => {
           <div className="hero-title">
             <div className="orange-circle" />
             <motion.h1
-            initial={{ y: "2rem", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 2,
-              type: "ease-in",
-            }}
+              initial={{ y: "2rem", opacity: 0 }}
+              animate={{ y: 0, opacity: 1}}
+              transition={{
+                duration: 2,
+                type: "ease-in",
+              }}
             >
               Discover <br />
               Most Suitable
@@ -28,7 +51,8 @@ const Hero = () => {
             <span>Forget all difficulties in finding a residence for you</span>
           </div>
 
-          <SearchBar/>
+          {/* <SearchBar/> */}
+          <div>-------------------------------</div>
 
           <div className="flexCenter stats">
             <div className="flexColCenter stat">
@@ -54,22 +78,48 @@ const Hero = () => {
           </div>
         </div>
 
+
+
         {/* right side */}
+        {/* // side move effect  */}
         <div className="flexCenter hero-right">
           <motion.div
-            initial={{ x: "7rem", opacity: 0 }}
+            key={currentImage}
+            initial={{ x: '7rem', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '-7rem', opacity: 0 }}
             transition={{
-              duration: 2,
-              type: "ease-in",
+              duration: 3, // Adjust the duration as needed
+              ease: "easeInOut", // Use a different easing function if desired
             }}
             className="image-container"
           >
-            <img src="./hero-image.png" alt="houses" />
+            <img src={images[currentImage]} alt={`houses-${currentImage}`} />
           </motion.div>
         </div>
+
+        {/* // fade in out effect */}
+        {/* <div className="flexCenter hero-right">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0}}
+            transition={{
+              duration: 2, // Adjust the duration as needed
+              ease: "easeInOut", // Use a different easing function if desired
+            }}
+            className="image-container"
+          >
+            <img src={images[currentImage]} alt={`houses-${currentImage}`} />
+          </motion.div>
+        </div> */}
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </section>
+
   );
 };
 
