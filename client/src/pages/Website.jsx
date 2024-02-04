@@ -16,11 +16,16 @@ const Website = () => {
       <div className="white-gradient" />
       <Hero />
     </div>
-    <Companies />
+    {/* <Companies /> */}
+    <br />
     <Residencies/>
+    <br/>
     <Value/>
+    <br/>
     <Contact/>
+    <br/>
     <GetStarted/>
+    <br/>
   </div>
   )
 }
