@@ -32,7 +32,7 @@ Welcome to RealEstateHub, a full-stack real estate project that enables users to
 
 2. **Install Dependencies:**
    ```bash
-   cd RealEstateHub
+   cd client
    npm install
    ```
 
