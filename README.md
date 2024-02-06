@@ -54,5 +54,15 @@ Contributions are welcome! Feel free to open issues or pull requests to improve 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<br/>
+<br/>
 
-Thank you for using RealEstateHub! If you have any questions or feedback, please don't hesitate to reach out.
+
+**_Thank you for using RealEstateHub! If you have any questions or feedback, please don't hesitate to reach out._**_
+
+## Logo
+<p align="center">
+  <img src="client/public/2.png" alt="Image">
+</p>
+
+
