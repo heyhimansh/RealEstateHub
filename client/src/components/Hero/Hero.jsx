@@ -10,17 +10,19 @@ const images = ["./r1.png", "./r2.png", "./r3.png"]; // Add more image URLs as n
 
 const Hero = () => {
   // const images = ['r1.png', 'r2.png', 'r3.png'];
-  const [currentImage, setCurrentImage] = useState(0);
+ 
 
-
+ const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    // Function to update the current image every 3 seconds (adjust the interval as needed)
+
+    // Function to update the current image every 4 seconds (adjust the interval as needed)
     const intervalId = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     }, 4000);
+    // 4000 ms is time after image id is changed
 
-    // Cleanup the interval when the component unmounts
+    // Cleanup 
     return () => clearInterval(intervalId);
   }, []);
 
@@ -52,7 +54,7 @@ const Hero = () => {
           </div>
 
           {/* <SearchBar/> */}
-          <div>-------------------------------</div>
+          <div>---------------------------------------</div>
 
           <div className="flexCenter stats">
             <div className="flexColCenter stat">
@@ -61,7 +63,7 @@ const Hero = () => {
               </span>
               <span className="secondaryText">Premium Product</span>
             </div>
-
+                 
             <div className="flexColCenter stat">
               <span>
                 <CountUp start={1950} end={2000} duration={4} /> <span>+</span>
@@ -71,7 +73,7 @@ const Hero = () => {
 
             <div className="flexColCenter stat">
               <span>
-                <CountUp end={28} /> <span>+</span>
+                <CountUp end={18} /> <span>+</span>
               </span>
               <span className="secondaryText">Awards Winning</span>
             </div>
@@ -79,8 +81,8 @@ const Hero = () => {
         </div>
 
 
-
         {/* right side */}
+        
         {/* // side move effect  */}
         <div className="flexCenter hero-right">
           <motion.div

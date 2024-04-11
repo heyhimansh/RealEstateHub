@@ -15,9 +15,7 @@ import Property from "./pages/Property/Property";
 import UserDetailContext from "./context/UserDetailContext";
 import Bookings from "./pages/Bookings/Bookings";
 import Favourites from "./pages/Favourites/Favourites";
-import NothingFoundBackground from "./pages/Error/ErrorPage.jsx"
-
-
+import NothingFoundBackground from "./pages/Error/ErrorPage.jsx";
 
 function App() {
   const queryClient = new QueryClient();
@@ -36,13 +34,14 @@ function App() {
             <Routes>
               <Route element={<Layout />}>
                 <Route path="/" element={<Website />} />
+
                 <Route path="/properties">
                   <Route index element={<Properties />} />
                   <Route path=":propertyId" element={<Property />} />
                 </Route>
+
                 <Route path="/bookings" element={<Bookings />} />
                 <Route path="/favourites" element={<Favourites />} />
-               
               </Route>
               <Route path="*" element={<NothingFoundBackground />} />
             </Routes>

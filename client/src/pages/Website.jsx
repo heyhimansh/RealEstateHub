@@ -1,33 +1,31 @@
-import React from 'react'
-import Companies from "../components/Companies/Companies";
+import React from "react";
+
 import Contact from "../components/Contact/Contact";
-import Footer from "../components/Footer/Footer";
+
 import GetStarted from "../components/GetStarted/GetStarted";
-import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
 import Residencies from "../components/Residencies/Residencies";
 import Value from "../components/Value/Value";
 
-
 const Website = () => {
   return (
     <div className="App">
-    <div>
-      <div className="white-gradient" />
-      <Hero />
-    </div>
-    {/* <Companies /> */}
-    <br />
-    <Residencies/>
-    <br/>
-    <Value/>
-    <br/>
-    <Contact/>
-    <br/>
-    <GetStarted/>
-    <br/>
-  </div>
-  )
-}
+      <div>
+        <div className="white-gradient" />
+        <Hero />
+      </div>
 
-export default Website
+      <br />
+      <Residencies />
+      <br />
+      <Value />
+      <br />
+      <Contact />
+      <br />
+      <GetStarted />
+      <br />
+    </div>
+  );
+};
+
+export default Website;
