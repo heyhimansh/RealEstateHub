@@ -1,88 +1,104 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-  AccordionItemState,
-} from "react-accessible-accordion";
-import "react-accessible-accordion/dist/fancy-example.css";
+  Badge,
+  Group,
+  Title,
+  Text,
+  Card,
+  SimpleGrid,
+  Container,
+  useMantineTheme,
+} from "@mantine/core";
 import {
-  MdOutlineArrowDropDown,
-  MdOutlineArrowDropDownCircle,
-} from "react-icons/md";
-import data from "../../utils/accordion.jsx";
-import { motion } from 'framer-motion';
-import "./Value.css";
-import ImgMotion from "./motion.jsx";
-// Demo styles, see 'Styles' section below for some notes on use.
+  IconGauge,
+  IconUser,
+  IconCookie,
+  IconCoinBitcoin,
+  IconCashBanknote,
+  IconCash,
+} from "@tabler/icons-react";
+import classes from "./Value.css";
 
-const Value = () => {
+const mockdata = [
+  {
+    title: "Best Interest Rates on the Market",
+    description:
+      "Finding your dream home is exciting, and securing the best mortgage rate makes it even better. Our expert team constantly monitors the market to offer you the most competitive interest rates. With our tailored mortgage solutions, you can save money and invest in your future with confidence.",
+    icon: IconGauge,
+  },
+  {
+    title: "Expert Advice",
+    description:
+      "Our experienced real estate professionals are here to guide you every step of the way, offering personalized advice and support tailored to your unique needs. Benefit from in-depth market analysis, accurate property valuations, and skilled negotiation to secure the best deals. ",
+    icon: IconUser,
+  },
+  {
+    title: "Best Price on the Market",
+    description:
+      "We guarantee the best prices for both buyers and sellers. Our extensive network and cutting-edge technology allow us to provide unmatched value. Whether you are purchasing your first home or selling a property, our pricing strategies ensure you get the best deal possible. ",
+    icon: IconCash,
+  },
+];
+
+export default function Value() {
+  const theme = useMantineTheme();
+  const features = mockdata.map((feature) => {
+    const IconComponent = feature.icon;
+    return (
+      <Card
+        key={feature.title}
+        shadow="md"
+        radius="md"
+        className={classes.card}
+        padding="xl"
+      >
+        <IconComponent
+          style={{ width: "50px", height: "50px" }}
+          stroke={2}
+          color={theme.colors.blue[6]}
+        />
+        <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+          {feature.title}
+        </Text>
+        <Text fz="sm" c="dimmed" mt="sm">
+          {feature.description}
+        </Text>
+      </Card>
+    );
+  });
+
   return (
-    <section id="value" className="v-wrapper">
-      <div className="paddings innerWidth flexCenter v-container">
-        {/* left side */}
-        {/* <div className="v-left">
-          <div className="image-container">
-            <img src="./lgg.png" alt="" />
-          </div>
-        </div> */}
-        <ImgMotion/>
+    <Container size="lg" py="65px">
+      <Group position="center">
+        <Badge variant="filled" size="lg">
+          Best company ever
+        </Badge>
+      </Group>
 
-        {/* right */}
-        <div className="flexColStart v-right">
-          <span className="orangeText">Our Value</span>
+      <Title order={2} className={classes.title} align="center" mt="sm">
+        Exceptional Services Tailored for You
+      </Title>
 
-          <span className="primaryText">Value We Give to You</span>
+      <Text
+        color="dimmed"
+        className={classes.description}
+        align="center"
+        mt="md"
+      >
+        Our comprehensive real estate services are designed to meet your unique
+        needs, providing unparalleled support and expertise every step of the
+        way. Experience the difference with personalized solutions that ensure
+        your success in the market.
+      </Text>
 
-          <span className="secondaryText">
-            We always ready to help by providijng the best services for you.
-            <br />
-            We beleive a good blace to live can make your life better
-          </span>
-
-          <Accordion
-            className="accordion"
-            allowMultipleExpanded={false}
-            preExpanded={[0]}
-          >
-            {data.map((item, i) => {
-              const [className, setClassName] = useState(null);
-              return (
-                <AccordionItem className={`accordionItem ${className}`} uuid={i} key={i}>
-                  <AccordionItemHeading>
-                    <AccordionItemButton className="flexCenter accordionButton ">
-                        {/* just for getting state of item */}
-                      <AccordionItemState>
-                        {({ expanded }) =>
-                          expanded
-                            ? setClassName("expanded")
-                            : setClassName("collapsed")
-                        }
-                      </AccordionItemState>
-                      <div className="flexCenter icon">{item.icon}</div>
-                      <span
-                        className="primaryText"
-                      >
-                        {item.heading}
-                      </span>
-                      <div className="flexCenter icon">
-                        <MdOutlineArrowDropDown size={20} />
-                      </div>
-                    </AccordionItemButton>
-                  </AccordionItemHeading>
-                  <AccordionItemPanel>
-                    <p className="secondaryText">{item.detail}</p>
-                  </AccordionItemPanel>
-                </AccordionItem>
-              );
-            })}
-          </Accordion>
-        </div>
-      </div>
-    </section>
+      <SimpleGrid
+        cols={3}
+        spacing="xl"
+        mt={50}
+        breakpoints={[{ maxWidth: "md", cols: 1 }]}
+      >
+        {features}
+      </SimpleGrid>
+    </Container>
   );
-};
-
-export default Value;
+}

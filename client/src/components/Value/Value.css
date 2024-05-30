@@ -1,57 +1,39 @@
-.v-container .image-container {
-  border-radius: 50%;
-}
-.v-container > div {
-  flex: 1;
-}
-.v-right {
-  gap: 0.5rem;
-}
-.accordion {
-  margin-top: 2rem;
-  border: none;
-}
-.accordionItem {
-  background: white;
-  border: 0.8px solid rgba(128, 128, 128, 0.143);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 20px;
+.title {
+  font-size: rem(34px);
+  font-weight: 900;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(24px);
+  }
 }
 
-.accordionItem.expanded {
-  box-shadow: var(--shadow);
-  border-radius: 6px;
-}
-.accordionButton {
-  background: white;
-  padding: 1rem;
-  width: 100%;
-  justify-content: space-between;
-  cursor: pointer;
+.description {
+  max-width: rem(600px);
+  margin: auto;
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: var(--mantine-color-blue-filled);
+    width: rem(45px);
+    height: rem(2px);
+    margin-top: var(--mantine-spacing-sm);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-.icon {
-  padding: 10px;
-  background: #eeeeff;
-  border-radius: 5px;
-}
-.icon svg {
-  fill: var(--blue);
+.card {
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
 }
 
-.accordionButton .primaryText{
-    font-size: 1.1rem;
-}
-
-@media (max-width: 1024px) {
-    .v-container{
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .accordionButton .primaryText{
-        font-size: .8rem;
-    }
+.cardTitle {
+  &::after {
+    content: '';
+    display: block;
+    background-color: var(--mantine-color-blue-filled);
+    width: rem(45px);
+    height: rem(2px);
+    margin-top: var(--mantine-spacing-sm);
+  }
 }
