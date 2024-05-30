@@ -10,6 +10,15 @@
   margin-top: 1.5rem;
   font-weight: 500;
 }
+
+.logo{
+  font-family: "Silkscreen", sans-serif;
+  /* font-weight: 700; */
+  font-style: normal;
+  font-weight: 600;
+    font-size: 3.8rem;
+    line-height: 4rem; 
+}
 @media (max-width: 768px) {
   .f-container{
       justify-content: center;

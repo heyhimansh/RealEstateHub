@@ -35,6 +35,7 @@ const Hero = () => {
         <div className="flexColStart hero-left">
           <div className="hero-title">
             <div className="orange-circle" />
+            <div className="orange-circle1" />
             <motion.h1
               initial={{ y: "2rem", opacity: 0 }}
               animate={{ y: 0, opacity: 1}}
@@ -48,34 +49,35 @@ const Hero = () => {
               <br /> Investment
             </motion.h1>
           </div>
-          <div className="flexColStart secondaryText flexhero-des">
+          
+          <div className="flexColStart flexhero-des" style={{ color : "#03045e"}}>
             <span>Find a variety of properties that suit you very easilty</span>
             <span>Forget all difficulties in finding a residence for you</span>
           </div>
 
-          {/* <SearchBar/> */}
-          <div>---------------------------------------</div>
+          
+          <div>-----------------------------------------------------</div>
 
           <div className="flexCenter stats">
             <div className="flexColCenter stat">
               <span>
                 <CountUp start={8800} end={9000} duration={4} /> <span>+</span>
               </span>
-              <span className="secondaryText">Premium Product</span>
+              <span style={{ color : "#03045e"}}>Premium Product</span>
             </div>
                  
             <div className="flexColCenter stat">
               <span>
                 <CountUp start={1950} end={2000} duration={4} /> <span>+</span>
               </span>
-              <span className="secondaryText">Happy Customer</span>
+              <span style={{ color : "#03045e"}}>Happy Customer</span>
             </div>
 
             <div className="flexColCenter stat">
               <span>
                 <CountUp end={18} /> <span>+</span>
               </span>
-              <span className="secondaryText">Awards Winning</span>
+              <span style={{ color : "#03045e"}}>Awards Winning</span>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./Footer.css";
 const Footer = () => {
   return (
@@ -6,7 +7,13 @@ const Footer = () => {
       <div className="paddings innerWidth flexCenter f-container">
         {/* left side */}
         <div className="flexColStart f-left">
-          <img src="./1.png" alt="" width={180} height={110} />
+          {/* <img src="./1.png" alt="" width={180} height={110} /> */}
+          {/* logo */}
+          <Link to="/">
+            <a className="logo">HOMIEE</a>
+            {/* <img src="./HOMIEE.png" alt="logo" width="100%" height="100%" /> */}
+          </Link>
+
           <span className="secondaryText">
             Our vision is to make all people <br />
             the best place to live for them.

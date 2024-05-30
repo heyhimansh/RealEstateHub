@@ -2,12 +2,24 @@
   z-index: 99;
   position: sticky;
   top: 0;
+  background-color: #caf0f8 ;
+  
 }
 .h-container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  color: var(--secondary);
+  background-color: #caf0f8 ;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+  color: #0096c7;
   justify-content: space-between;
+}
+
+.logo{
+  font-family: "Silkscreen", sans-serif;
+  /* font-weight: 700; */
+  font-style: normal;
+  font-weight: 600;
+    font-size: 3.8rem;
+    line-height: 4rem; 
 }
 
 .h-menu {
@@ -25,7 +37,7 @@
     display: block;
   }
   .h-menu {
-    color: var(--black);
+    color: #00b4d8;
     position: absolute;
     gap: 2rem;
     font-weight: 500;

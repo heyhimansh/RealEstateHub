@@ -12,8 +12,7 @@ import useAuthCheck from "../../hooks/useAuthCheck.jsx";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const headerColor = useHeaderColor();
-  const [modalOpened, setModalOpened] = useState(false);
+   const [modalOpened, setModalOpened] = useState(false);
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
   const { validateLogin } = useAuthCheck();
 
@@ -24,12 +23,14 @@ const Header = () => {
     }
   };
   return (
-    <section className="h-wrapper" style={{ background: headerColor }}>
+    <section className="h-wrapper" >
       <div className="flexCenter innerWidth paddings h-container">
         {/* logo */}
         <Link to="/">
-          <img src="./2.png" alt="logo" width={180} height={110}  />
+          <a className="logo">HOMIEE</a>
+          {/* <img src="./HOMIEE.png" alt="logo" width="100%" height="100%" /> */}
         </Link>
+        
 
 
 
