@@ -1,9 +1,9 @@
 .inner-container{
     gap: 1.5rem;
-    background: #4161df;
+    background: #caf0f8;
     padding: 2rem;
     border-radius: 10px;
-    border: 6px solid #5d77d6;
+    border: 6px solid #caf0f8;
     text-align: center;
 }
 
@@ -20,3 +20,16 @@
     box-shadow: var(--shadow);
     border-radius: 10px;
 }
+
+
+
+.set{
+    font-family: "Silkscreen", sans-serif;
+    /* font-weight: 700; */
+    color: #0096c7;
+    font-style: normal;
+    font-weight: 600;
+      font-size: 2rem;
+      line-height: 2rem; 
+  }
+  

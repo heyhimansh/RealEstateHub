@@ -5,8 +5,8 @@ const GetStarted = () => {
     <div id="get-started" className="g-wrapper">
       <div className="paddings innerWidth g-container">
         <div className="flexColCenter inner-container">
-          <span className="primaryText">Get started with HOMIEE 🚀 </span>
-          <span className="secondaryText">
+          <span className="set">Get started with HOMIEE 🚀 </span>
+          <span style={{color :"black"}}>
             Subscribe and find super attractive price quotes from us.
             <br />
             Find your residence soon
