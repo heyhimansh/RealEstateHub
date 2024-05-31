@@ -74,10 +74,12 @@ export default function Value() {
           Best company ever
         </Badge>
       </Group>
-
-      <Title order={2} className={classes.title} align="center" mt="sm">
+      {/* <span className="set">Exceptional Services Tailored for You </span>
+          <span style={{color :"black"}}></span> */}
+      
+      <h2  className="set" >
         Exceptional Services Tailored for You
-      </Title>
+      </h2>
 
       <Text
         color="dimmed"

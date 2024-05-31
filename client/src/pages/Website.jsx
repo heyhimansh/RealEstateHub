@@ -8,6 +8,7 @@ import Residencies from "../components/Residencies/Residencies";
 import Value from "../components/Value/Value";
 
 
+
 const Website = () => {
   return (
     <div className="App">

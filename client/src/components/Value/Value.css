@@ -1,10 +1,20 @@
 .title {
-  font-size: rem(34px);
-  font-weight: 900;
+  /* font-size: rem(140px);
+  font-weight: 900; */
 
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: rem(24px);
   }
+}
+.set {
+  font-family: "Silkscreen", sans-serif;
+  /* font-weight: 700; */
+  font-style: normal;
+  font-weight: 550;
+  font-size: 2rem;
+  line-height: 4rem;
+  text-align: center;
+  
 }
 
 .description {
@@ -12,7 +22,7 @@
   margin: auto;
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     background-color: var(--mantine-color-blue-filled);
     width: rem(45px);
@@ -24,12 +34,13 @@
 }
 
 .card {
-  border: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+  border: rem(1px) solid
+    light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
 }
 
 .cardTitle {
   &::after {
-    content: '';
+    content: "";
     display: block;
     background-color: var(--mantine-color-blue-filled);
     width: rem(45px);
